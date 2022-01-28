@@ -202,7 +202,8 @@ public:
     void operator()(option_value_type const & cmp) const
     {
         if (!(std::find(values.begin(), values.end(), cmp) != values.end()))
-            throw validation_error{seqan3::detail::to_string("Value ", cmp, " is not one of ", std::views::all(values), ".")};
+            throw validation_error{seqan3::detail::to_string("Value ", cmp, " is not one of ", std::views::all(values),
+                                                             ".")};
     }
 
     /*!\brief Tests whether every element in \p range lies inside values.
